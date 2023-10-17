@@ -1,5 +1,6 @@
 .idea/
-src/external/data/generic_model.pkl
-src/external/data/deca_model.tar
+src/external/data/
 src/checkpoints/
 test_case/result
+__pycache__/
+.DS_Store

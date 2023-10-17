@@ -104,7 +104,10 @@ class Face2FaceRHOConfigParse(ConfigParse):
         # basic config
         opt.name = self.conf.get("ROOT", "name")
         opt.gpu_ids = self.conf.get("ROOT", "gpu_ids")
-        opt.gpu_ids = str2ids(opt.gpu_ids)
+        if opt.gpu_ids != None and opt.gpu_ids != '':
+            opt.gpu_ids = str2ids(opt.gpu_ids)
+        else:
+            opt.gpu_ids = []
         opt.checkpoints_dir = self.conf.get("ROOT", "checkpoints_dir")
         opt.model = self.conf.get("ROOT", "model")
         opt.output_size = int(self.conf.get("ROOT", "output_size"))

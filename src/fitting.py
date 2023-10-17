@@ -50,7 +50,7 @@ class FLAMEFitting:
         self.deca = DECA(config=deca_cfg, device=args.device)
 
     def fitting(self, img_name):
-        testdata = datasets.TestData(img_name, iscrop=True,face_detector='fan', sample_step=10)
+        testdata = datasets.TestData(img_name, iscrop=True,face_detector='fan', sample_step=10, device=args.device)
         input_data = testdata[0]
         images = input_data['image'].to(args.device)[None, ...]
         with torch.no_grad():
